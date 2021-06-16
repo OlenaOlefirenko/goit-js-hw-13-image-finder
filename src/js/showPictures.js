@@ -1,6 +1,7 @@
 import cardMarkup from '../templates/photoCard.hbs';
 import ImageApiService from './apiService.js';
 import LoadMoreBtn from './load-more-btn.js';
+import { onOpenModal } from './modal.js';
 
 import { error } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
@@ -9,7 +10,6 @@ import '@pnotify/core/dist/PNotify.css';
 const refs = {
   searchForm: document.querySelector('.search-form'),
   galleryContainer: document.querySelector('.gallery'),
-  // loadMoreBtn: document.querySelector('[data-action="load-more"]'),
 };
 const loadMoreBtn = new LoadMoreBtn({
   selector: '[data-action="load-more"]',
@@ -19,6 +19,7 @@ const loadMoreBtn = new LoadMoreBtn({
 const imageApiService = new ImageApiService();
 
 refs.searchForm.addEventListener('submit', onSearch);
+refs.galleryContainer.addEventListener('click', onOpenModal);
 loadMoreBtn.refs.button.addEventListener('click', fetchHits);
 
 function onSearch(e) {
