@@ -1,7 +1,75 @@
+/* :root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+} */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #fcf9ce;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 24px;
+  text-align: center;
+  padding: 40px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .button.is-hidden {
   display: none;
 }
+
+.btn {
+  padding: 3px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #fefeff;
+  background-color: #aed5ee;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+.search-form-input {
+  padding: 3px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.search-form-input::placeholder {
+  opacity: 1;
+}
+
+.search-form-input:focus::placeholder {
+  opacity: 0;
+}
+
+.search-form {
+  margin-bottom: 15px;
+}
+
 .gallery {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center; */
+  /* padding: 15px; */
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 20px;
@@ -14,9 +82,28 @@
   margin-bottom: 30px;
 }
 
+.photo-card {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid#aed5ee;
+  background-color: #e5e3fd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-card:hover {
+  transform: scale(1.2);
+}
+
 .stats {
   display: flex;
   justify-content: space-evenly;
+  color: #253c4b;
 }
 
 .stats-item {
@@ -27,5 +114,4 @@
 
 .stats-item i {
   margin-bottom: 5px;
-  color: #36454f;
 }

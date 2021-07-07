@@ -24,6 +24,7 @@ loadMoreBtn.refs.button.addEventListener('click', fetchHits);
 
 function onSearch(e) {
   e.preventDefault();
+  clearImageContainer();
 
   imageApiService.query = e.currentTarget.elements.query.value;
 
@@ -34,7 +35,7 @@ function onSearch(e) {
 
   loadMoreBtn.show();
   imageApiService.resetPage();
-  clearImageContainer();
+
   fetchHits();
 }
 
@@ -62,7 +63,7 @@ function clearImageContainer() {
 
 function noResult() {
   error({
-    text: 'please, enter a word!',
+    text: 'please, enter the name of the picture!',
     delay: 2500,
     width: '400px',
     minHeight: '50px',
